@@ -1,0 +1,35 @@
+<section class="d-flex flex-column align-items-center">
+  <h1 class="mt-3">Sign up</h1>
+
+  <%= form_for @user, url: '/users' do |f| %>
+
+  <div class="card mt-3">
+    <div class="card-body d-flex flex-column">
+      <div class="mb-3">
+        <%= f.label :name, { class: "form-label"} %>
+        <%= f.text_field :name, { class: "form-control", Placeholder:"Name"}%>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :email, { class: "form-label"} %>
+        <%= f.text_field :email, { class: "form-control", Placeholder:"your@email.here"} %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password, { class: "form-label"} %>
+        <%= f.password_field :password, { class: "form-control", Placeholder:"New password"} %>
+      </div>
+        
+      <div class="mb-3">
+        <%= f.label :password_confirmation, { class: "form-label"} %>
+        <%= f.password_field :password_confirmation, { class: "form-control", Placeholder:"Confirm your password"} %>
+      </div>
+  
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+
+  </div>
+  
+</section>

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
   get 'static_pages/faq'
-  get 'static_pages/about'
+  #get 'static_pages/about'
+  resources :about, only: [:index]
+
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :categories, except: [:show, :destroy, :edit, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
